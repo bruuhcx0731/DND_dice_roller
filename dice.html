@@ -1,51 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style = "font-family: Helvetica; color: white; background: #5a5a5a;">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="dice.css">
+    <title>DND Dice Roller</title>
 </head>
 <body id="dice-roller">
     <header>
         <h1>Dunegons and Dragons Dice Roller!</h1>
     </header>
-    <div id="d20-roll">
-        <h3>D20 Roller</h3>
-        <p>{{ d20roll }}</p>
-        <button type="button" @click="d20roller(1,20)">Roll</button>
-        <button type="button" @click="d20reset">Reset</button>
-    </div>
-    <div id="d12-roll">
-        <h3>D12 Roller</h3>
-        <p>{{ d12roll }}</p>
-        <button type="button" @click="d12roller(1,12)">Roll</button>
-        <button type="button" @click="d12reset">Reset</button>
-    </div>
-    <div id="d10-roll">
-        <h3>D10 Roller</h3>
-        <p>{{ d10roll }}</p>
-        <button type="button" @click="d10roller(1,10)">Roll</button>
-        <button type="button" @click="d10reset">Reset</button>
-    </div>
-    <div id="d8-roll">
-        <h3>D8 Roller</h3>
-        <p>{{ d8roll }}</p>
-        <button type="button" @click="d8roller(1,8)">Roll</button>
-        <button type="button" @click="d8reset">Reset</button>
-    </div>
-    <div id="d6-roll">
-        <h3>D6 Roller</h3>
-        <p>{{ d6roll }}</p>
-        <button type="button" @click="d6roller(1,6)">Roll</button>
-        <button type="button" @click="d6reset">Reset</button>
-    </div>
-    <div id="d4-roll">
-        <h3>D4 Roller</h3>
-        <p>{{ d4roll }}</p>
-        <button type="button" @click="d4roller(1,4)">Roll</button>
-        <button type="button" @click="d4reset">Reset</button>
-    </div>
+    <section class="sections">
+        <div id="divs">
+            <h2>D20 Roller</h2>
+            <p>{{ d20roll }}</p>
+            <p class="counter">You have rolled {{ d20counter }} times</p>
+            <button type="button" @click="d20roller(1,20)">Roll</button>
+            <button type="button" @click="d20reset">Reset</button>
+        </div>
+        <div id="divs">
+            <h2>D12 Roller</h2>
+            <p>{{ d12roll }}</p>
+            <p class="counter">You have rolled {{ d12counter }} times</p>
+            <button type="button" @click="d12roller(1,12)">Roll</button>
+            <button type="button" @click="d12reset">Reset</button>
+        </div>
+    </section>
+    <section class="sections">
+        <div id="divs">
+            <h2>D10 Roller</h2>
+            <p>{{ d10roll }}, {{ d10roll2 }}</p>
+            <p class="counter">You have rolled {{ d10counter }} times</p>
+            <button type="button" @click="d10roller(1,10)">Roll</button>
+            <button type="button" @click="d10reset">Reset</button>
+        </div>
+        <div id="divs">
+            <h2>D8 Roller</h2>
+            <p>{{ d8roll }}</p>
+            <p class="counter">You have rolled {{ d8counter }} times</p>
+            <button type="button" @click="d8roller(1,8)">Roll</button>
+            <button type="button" @click="d8reset">Reset</button>
+        </div>
+    </section>
+    <section class="sections">
+        <div id="divs">
+            <h2>D6 Roller</h2>
+            <p>{{ d6roll }}</p>
+            <p class="counter">You have rolled {{ d6counter }} times</p>
+            <button type="button" @click="d6roller(1,6)">Roll</button>
+            <button type="button" @click="d6reset">Reset</button>
+        </div>
+        <div id="divs">
+            <h2>D4 Roller</h2>
+            <p>{{ d4roll }}</p>
+            <p class="counter">You have rolled {{ d4counter }} times</p>
+            <button type="button" @click="d4roller(1,4)">Roll</button>
+            <button type="button" @click="d4reset">Reset</button>
+        </div>
+    </section>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="dice.js"></script>
 </body>
