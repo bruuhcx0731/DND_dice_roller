@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style = "font-family: Helvetica; color: white; background: #5a5a5a;">
+<html lang="en" style = "font-family: Helvetica; color: white; background: #023020;">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,10 +14,12 @@
     <section class="sections">
         <div id="divs">
             <h2>D20 Roller</h2>
-            <p>{{ d20roll }}</p>
+            <p>{{ d20lastroll }}</p>
+            <p v-if="d20history"> {{ d20roll }}</p>
             <p class="counter">You have rolled {{ d20counter }} times</p>
-            <button type="button" @click="d20roller(1,20)">Roll</button>
-            <button type="button" @click="d20reset">Reset</button>
+            <button type="button" id="20roller" @click="roller">Roll</button>
+            <button type="button" id="20reset" @click="reset">Reset</button>
+            <button type="button" id="20history" @click="history">Show History</button>
         </div>
         <div id="divs">
             <h2>D12 Roller</h2>

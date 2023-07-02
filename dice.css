@@ -28,7 +28,7 @@ p{
     padding: 30px;
 }
 button{
-    background: #5A5A5A;
+    background: #023020;
     border:solid;
     border-color: white;
     border-width: 2px;
@@ -42,5 +42,5 @@ button{
 }
 button:hover{
     background: white;
-    color: black;
+    color: #023020;
 }

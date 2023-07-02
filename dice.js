@@ -1,7 +1,10 @@
 const app = Vue.createApp({
     data() {
         return{
-            d20roll: 0,
+            d20roll:[],
+            d20history: false,
+            d20result: 0,
+            d20lastroll: 0,
             d12roll: 0,
             d10roll: 0,
             d10roll2:0,
@@ -17,14 +20,36 @@ const app = Vue.createApp({
         };
     },
     methods : {
-        d20roller(min, max) {
-            this.d20roll = Math.floor(Math.random() * (max - min + 1)) + min;
-            this.d20counter += 1;
+        roller() {
+            if(document.getElementById("20roller").click) {
+                // this.d20roll = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
+                this.d20result = Math.floor(Math.random() * (20 - 1 + 1)) + 1; 
+                this.d20roll.push(this.d20result);
+                this.d20counter += 1;
+                this.d20lastroll = this.d20roll[this.d20roll.length - 1];
+            }
         },
-        d20reset() {
-            this.d20roll = 0;
-            this.d20counter = 0;
+        reset(){
+            if(document.getElementById("20reset").click) {
+                this.d20roll = [];
+                this.d20counter = 0;
+                this.d20lastroll = 0;
+                this.d20history = false;
+            }
         },
+        history() {
+            if(document.getElementById("20history").click) {
+                this.d20history = true;
+            }
+        },
+        // d20roller(min, max) {
+        //     this.d20roll = Math.floor(Math.random() * (max - min + 1)) + min;
+        //     this.d20counter += 1;
+        // },
+        // d20reset() {
+        //     this.d20roll = 0;
+        //     this.d20counter = 0;
+        // },
         d12roller(min, max) {
             this.d12roll = Math.floor(Math.random() * (max - min + 1)) + min;
             this.d12counter += 1;
